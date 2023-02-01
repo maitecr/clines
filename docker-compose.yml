@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  database:
+    image: postgres:12
+    environment:
+      POSTGRES_USERNAME: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: clines
+    volumes:
+    - db-volume:/var/lib/postgresql/12/data
+
+  api:
+    image: caelum/clines-api
+    environment:
+      DB_HOST: database
+    ports:
+      - "8080:8080"
+volumes:
+  db-volume:
