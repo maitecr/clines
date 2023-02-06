@@ -8,7 +8,5 @@ EXPOSE 8080
 
 CMD java -XX:+UseContainerSupport -jar app.jar
 
-# ARG EnvironmentVariable
+ARG EnvironmentVariable
 
-ARG PORT
-ENV PORT=${{PGPORT}}
