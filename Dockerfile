@@ -1,6 +1,6 @@
 FROM openjdk:11-jre-slim
 
-WORKDIR /clines/
+WORKDIR /cline
 
 COPY */target/*.jar /clines/app.jar
 
